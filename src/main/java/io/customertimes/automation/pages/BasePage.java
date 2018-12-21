@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Iterator;
 import java.util.Set;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.WebDriverRunner.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
@@ -29,11 +30,15 @@ public abstract class BasePage {
         $(locator).waitUntil(Condition.appears, 10000).val(text);
     }
 
-    protected SelenideElement find(By locator){
+    protected SelenideElement findByLocator(By locator){
         return $(locator).waitUntil(Condition.appears, 10000);
     }
 
-    protected ElementsCollection findAll(By locator){
+    protected SelenideElement findByText(String text){
+        return $(byText(text));
+    }
+
+    protected ElementsCollection findAllByLocator(By locator){
         return $$(locator);
     }
 
@@ -84,7 +89,6 @@ public abstract class BasePage {
     protected SelenideElement hoverOverTheElement(By locator){
        return $(locator).hover();
     }
-
 
 
 

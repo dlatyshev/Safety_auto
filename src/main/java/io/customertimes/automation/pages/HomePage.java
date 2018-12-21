@@ -7,11 +7,22 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class HomePage extends BasePage{
-    By homeTab = By.xpath("//span[text() = 'Home']");
+public class HomePage extends BasePage {
+
+    private By homeTab = By.xpath("//span[text() = 'Home']");
+    private By appLaucher = By.cssSelector("button[class='sldc-button");
 
     @Override
     public boolean pageIsOpened() {
-       return  $(homeTab).waitUntil(Condition.appear, 40000).isDisplayed();
+       return  findByLocator(homeTab).isDisplayed();
     }
+
+    public AppLauncherPage clickAppLauncher(){
+        click(appLaucher);
+        return new AppLauncherPage();
+    }
+
+
+
+
 }

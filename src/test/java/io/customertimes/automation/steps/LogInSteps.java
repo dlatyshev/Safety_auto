@@ -4,8 +4,10 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
+import io.customertimes.automation.pages.AppLauncherPage;
 import io.customertimes.automation.pages.HomePage;
 import io.customertimes.automation.pages.LoginPage;
+import io.customertimes.automation.utilities.TestUtils;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -13,24 +15,39 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.WebDriverRunner.*;
 
 
-public class LogInSteps {
+public class LogInSteps extends TestUtils {
     private LoginPage loginPage = new LoginPage();
     private HomePage homePage;
-
-
-    @Then("^main page is opened$")
-    public void main_page_is_opened() throws Throwable {
-        Assert.assertTrue(homePage.pageIsOpened());
-    }
+    private AppLauncherPage appLauncherPage;
 
     @Given("^open login page$")
     public void openLoginPage() throws Throwable {
         open(LoginPage.URL);
     }
 
-    @Given("^enter valid credentials and press enter$")
+
+    @Then("^main page is opened$")
+    public void mainPageIsOpened() throws Throwable {
+        Assert.assertTrue(homePage.pageIsOpened());
+    }
+
+
+    @Given("^enter valid credentials and press 'Enter'$")
     public void enterValidCredentialsAndPressEnter() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        String username = readProperty("username");
+        String password = readProperty("password");
+        homePage = loginPage.LogIn(username, password);
+    }
+
+
+    @Then("^dashboard is opened$")
+    public void dashboardIsOpened() throws Throwable {
+
+    }
+
+    @When("^user click 'App launcher' and select \"([^\"]*)\"$")
+    public void userClickAppLauncherAndSelect(String appName) throws Throwable {
+        appLauncherPage = homePage.clickAppLauncher();
+        appLauncherPage.selectApp(appName);
     }
 }

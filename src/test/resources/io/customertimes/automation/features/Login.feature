@@ -2,9 +2,10 @@ Feature: Duplicate search
 
   Background:
     Given open login page
-    Given enter valid credentials and press enter
+    When enter valid credentials and press 'Enter'
+    Then main page is opened
 
-  Scenario: Create new duplicate rule
-    Given click App launcher and select "Duplicate rules"
-
+  Scenario: Open the dashboard
+    When user click 'App launcher' and select "Home"
+    Then dashboard is opened
 

@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 public class LoginPage extends BasePage {
+
     public static final String URL = "https://test.salesforce.com";
 
     private By usernameField = By.cssSelector("#username");
