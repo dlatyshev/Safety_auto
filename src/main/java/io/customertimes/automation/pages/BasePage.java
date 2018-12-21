@@ -26,11 +26,11 @@ public abstract class BasePage {
     }
 
     protected void type(String text, By locator){
-        $(locator).waitUntil(Condition.appears, 10).val(text);
+        $(locator).waitUntil(Condition.appears, 10000).val(text);
     }
 
     protected SelenideElement find(By locator){
-        return $(locator).waitUntil(Condition.appears, 10);
+        return $(locator).waitUntil(Condition.appears, 10000);
     }
 
     protected ElementsCollection findAll(By locator){

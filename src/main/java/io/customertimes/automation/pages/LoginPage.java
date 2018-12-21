@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
 
 public class LoginPage extends BasePage {
-    public static final String URL = "https://iqvia-safety--dev1.cs107.my.salesforce.com";
+    public static final String URL = "https://test.salesforce.com";
 
     private By usernameField = By.cssSelector("#username");
     private By passwordField = By.cssSelector("#password");

@@ -17,14 +17,20 @@ public class LogInSteps {
     private LoginPage loginPage = new LoginPage();
     private HomePage homePage;
 
-    @When("^user logs in with credentials \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void user_logs_in_with_credentials_and(String email, String password) throws Throwable {
-        open(LoginPage.URL);
-        homePage = loginPage.LogIn(email, password);
-    }
 
     @Then("^main page is opened$")
     public void main_page_is_opened() throws Throwable {
         Assert.assertTrue(homePage.pageIsOpened());
+    }
+
+    @Given("^open login page$")
+    public void openLoginPage() throws Throwable {
+        open(LoginPage.URL);
+    }
+
+    @Given("^enter valid credentials and press enter$")
+    public void enterValidCredentialsAndPressEnter() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 }

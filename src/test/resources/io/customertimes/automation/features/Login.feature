@@ -1,8 +1,10 @@
-Feature: Log in to the application
-  Log in to the application using valid credentials
+Feature: Duplicate search
 
+  Background:
+    Given open login page
+    Given enter valid credentials and press enter
 
-  Scenario: Log in to the app
-    When user logs in with credentials "roman.khudyakov@highpointsolutions.com.safety.dev1" and "Poqw09123"
-    Then main page is opened
+  Scenario: Create new duplicate rule
+    Given click App launcher and select "Duplicate rules"
+
 
