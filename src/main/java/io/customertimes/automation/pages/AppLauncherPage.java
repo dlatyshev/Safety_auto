@@ -1,16 +1,17 @@
 package io.customertimes.automation.pages;
 
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class AppLauncherPage extends Page {
-    private By header = By.cssSelector("h2[class='slds-text-heading--medium']");
-    private By searchField = By.cssSelector("div[title=\"Search\"]");
+    private SelenideElement header = $("h2[class='slds-text-heading--medium']");
+    private SelenideElement searchField = $("div[title=\"Search\"]");
 
     @Override
     protected boolean pageIsOpened() {
-        return $(header).isDisplayed();
+        return header.isDisplayed();
     }
 
     public void clickOnItemOrApplication(String appNameOrItem){
