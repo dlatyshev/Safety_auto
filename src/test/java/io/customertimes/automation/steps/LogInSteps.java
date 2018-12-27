@@ -1,25 +1,20 @@
 package io.customertimes.automation.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
-import cucumber.api.java.en.Then;
-import io.customertimes.automation.pages.AppLauncherPage;
 import io.customertimes.automation.pages.OrgPage;
-import io.customertimes.automation.pages.LoginPage;
+import io.customertimes.automation.pages.LoginBase;
 import io.customertimes.automation.utilities.TestUtils;
-import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.*;
 
 
 public class LogInSteps extends TestUtils {
-    private LoginPage loginPage = new LoginPage();
+    private LoginBase loginPage = new LoginBase();
 
 
     @Given("^Log in to SF$")
     public OrgPage logInToSF() {
-        open(LoginPage.URL);
+        open(LoginBase.URL);
         String username = readProperty("username");
         String password = readProperty("password");
         loginPage.LogIn(username, password);

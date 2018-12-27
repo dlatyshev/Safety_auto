@@ -1,21 +1,23 @@
 package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
-
-
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class HomePage {
+public class HomePage extends Base {
     CaseCandidates caseCandidates;
-
     private ElementsCollection listOfSourceDocuments = $$("th[data-label=\"Account Name\"] a");
 
+
+    public HomePage() {
+        this.isOpened = pageIsOpened();
+    }
 
     public void selectSourceDocumentFromTheList(int index){
         listOfSourceDocuments.get(index).click();
     }
 
+
+    public boolean isOpened() {
+        return isOpened;
+    }
 }

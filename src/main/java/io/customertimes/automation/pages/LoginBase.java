@@ -2,14 +2,11 @@ package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.$;
 
-public class LoginPage extends Page {
+public class LoginBase extends Base {
 
     public static final String URL = "https://test.salesforce.com";
-
     private SelenideElement usernameField = $("#username");
     private SelenideElement passwordField = $("#password");
     private SelenideElement loginButton = $("#Login");
@@ -25,8 +22,5 @@ public class LoginPage extends Page {
         return new OrgPage();
     }
 
-    @Override
-    public boolean pageIsOpened() {
-        return $(loginButton).waitUntil(Condition.visible, 10000).isDisplayed();
-    }
+
 }

@@ -1,6 +1,5 @@
 package io.customertimes.automation.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import io.customertimes.automation.pages.Case;
 import io.customertimes.automation.utilities.TestUtils;
@@ -11,7 +10,7 @@ public class CaseSteps extends TestUtils {
 
     @Then("^case details are opened$")
     public void caseDetailsAreOpened()  {
-        Assert.assertTrue(aCase.pageIsOpened());
+        Assert.assertTrue(aCase.isOpened());
     }
 
     @Then("^user can edit case information manually$")
