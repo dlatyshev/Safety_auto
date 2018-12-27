@@ -56,9 +56,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M2</version>
                 <configuration>
-                    <suiteXmlFile>
-                        io.customertimes.automation.suites/testng.xml
-                    </suiteXmlFile>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/io.customertimes.automation.suites/testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>

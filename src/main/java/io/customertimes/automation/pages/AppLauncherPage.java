@@ -6,6 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AppLauncherPage extends Page {
     private By header = By.cssSelector("h2[class='slds-text-heading--medium']");
+    private By searchField = By.cssSelector("div[title=\"Search\"]");
 
     @Override
     protected boolean pageIsOpened() {

@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class OrgPage extends Page {
 
     private By homeTab = By.xpath("//span[text() = 'Home']");
-    private By appLaucher = By.cssSelector("div[class='slds-icon-waffle");
+    private By appLauncher = By.cssSelector("nav[class=\"appLauncher slds-context-bar__icon-action\"] > button");
 
     @Override
     public boolean pageIsOpened() {
@@ -16,7 +16,7 @@ public class OrgPage extends Page {
     }
 
     public AppLauncherPage clickAppLauncher(){
-        click(appLaucher);
+        click(appLauncher);
         return new AppLauncherPage();
     }
 
