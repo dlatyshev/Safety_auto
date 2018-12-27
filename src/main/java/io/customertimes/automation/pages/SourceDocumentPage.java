@@ -1,36 +1,37 @@
 package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.Condition;
-import org.openqa.selenium.By;
+import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class SourceDocumentPage extends Page {
-    private By readyForAutomaticCaseProcessingBtn = By.xpath("//button[text() = \"Ready for Automatic Case Processing\"]");
-    private By enterCaseInformationManuallyBtn = By.xpath("//button[text() = \"Enter Case Information Manually\"]");
-    private By splitBtn = By.cssSelector("button[name = \"split\"]");
-    private By mergeBtn = By.cssSelector("button[name = \"merge\"]");
+    private SelenideElement readyForAutomaticCaseProcessingBtn = $x("//button[text() = \"Ready for Automatic Case Processing\"]");
+    private SelenideElement enterCaseInformationManuallyBtn = $x("//button[text() = \"Enter Case Information Manually\"]");
+    private SelenideElement splitBtn = $("button[name = \"split\"]");
+    private SelenideElement mergeBtn = $("button[name = \"merge\"]");
 
     @Override
     public boolean pageIsOpened() {
-        boolean splitButtonExists = $(splitBtn).waitUntil(Condition.appears, 10000).exists();
-        boolean mergeButtonExists = $(mergeBtn).waitUntil(Condition.appears, 10000).exists();
+        boolean splitButtonExists = splitBtn.waitUntil(Condition.appears, 10000).exists();
+        boolean mergeButtonExists = mergeBtn.waitUntil(Condition.appears, 10000).exists();
         return splitButtonExists && mergeButtonExists;
     }
 
     public void clickTheButton(String buttonName){
        switch(buttonName.toLowerCase()){
            case "ready for automatic case processing":
-               $(readyForAutomaticCaseProcessingBtn).click();
+               readyForAutomaticCaseProcessingBtn.click();
                break;
            case "enter case information manually":
-               $(enterCaseInformationManuallyBtn).click();
+               enterCaseInformationManuallyBtn.click();
                break;
            case "split":
-               $(splitBtn).click();
+               splitBtn.click();
                break;
            case "merge":
-               $(mergeBtn).click();
+               mergeBtn.click();
                break;
        }
     }

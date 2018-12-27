@@ -1,6 +1,7 @@
 package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -9,16 +10,17 @@ public class LoginPage extends Page {
 
     public static final String URL = "https://test.salesforce.com";
 
-    private By usernameField = By.cssSelector("#username");
-    private By passwordField = By.cssSelector("#password");
-    private By loginButton = By.cssSelector("#Login");
+    private SelenideElement usernameField = $("#username");
+    private SelenideElement passwordField = $("#password");
+    private SelenideElement loginButton = $("#Login");
 
 
 
     public OrgPage LogIn(String email, String password){
-        type(email, usernameField);
-        type(password, passwordField);
-        click(loginButton);
+
+        usernameField.val(email);
+        passwordField.val(password);
+        loginButton.click();
 
         return new OrgPage();
     }
