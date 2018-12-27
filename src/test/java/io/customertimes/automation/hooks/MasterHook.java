@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+
 
 public class MasterHook extends TestUtils {
 
@@ -19,6 +21,7 @@ public class MasterHook extends TestUtils {
 
         Configuration.screenshots = true;
         Configuration.browser = readProperty("browser");
+        Configuration.timeout = 10000;
     }
 
     @After

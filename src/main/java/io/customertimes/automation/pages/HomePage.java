@@ -1,28 +1,17 @@
 package io.customertimes.automation.pages;
 
-import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
+import java.util.ArrayList;
 
-public class HomePage extends BasePage {
+import static com.codeborne.selenide.Selenide.$$;
 
-    private By homeTab = By.xpath("//span[text() = 'Home']");
-    private By appLaucher = By.cssSelector("button[class='sldc-button");
+public class HomePage {
+    private By listOfSourceDocuments = By.cssSelector("th[data-label=\"Account Name\"] a");
 
-    @Override
-    public boolean pageIsOpened() {
-       return  findByLocator(homeTab).isDisplayed();
+
+    public void selectSourceDocumentFromTheList(int index){
+        $$(listOfSourceDocuments).get(index).click();
     }
-
-    public AppLauncherPage clickAppLauncher(){
-        click(appLaucher);
-        return new AppLauncherPage();
-    }
-
-
-
-
 }

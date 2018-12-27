@@ -4,9 +4,8 @@ import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.page;
 
-public class LoginPage extends BasePage {
+public class LoginPage extends Page {
 
     public static final String URL = "https://test.salesforce.com";
 
@@ -16,12 +15,12 @@ public class LoginPage extends BasePage {
 
 
 
-    public HomePage LogIn(String email, String password){
+    public OrgPage LogIn(String email, String password){
         type(email, usernameField);
         type(password, passwordField);
         click(loginButton);
 
-        return new HomePage();
+        return new OrgPage();
     }
 
     @Override

@@ -19,7 +19,7 @@ public class TestUtils {
         Properties property = new Properties();
         FileInputStream fs = null;
         try {
-            fs = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\config.properties");
+            fs = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/config.properties");
             property.load(fs);
         } catch (IOException ex){
             ex.printStackTrace();
