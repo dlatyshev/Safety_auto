@@ -1,22 +1,18 @@
 package io.customertimes.automation.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class SourceDocumentPage extends Page {
-    private SelenideElement readyForAutomaticCaseProcessingBtn = $x("//button[text() = \"Ready for Automatic Case Processing\"]");
-    private SelenideElement enterCaseInformationManuallyBtn = $x("//button[text() = \"Enter Case Information Manually\"]");
+public class SourceDocumentPage extends Base {
+
+    private SelenideElement readyForAutomaticCaseProcessingBtn = $x("//button[text() = \"Ready for Automatic CasePage Processing\"]");
+    private SelenideElement enterCaseInformationManuallyBtn = $x("//button[text() = \"Enter CasePage Information Manually\"]");
     private SelenideElement splitBtn = $("button[name = \"split\"]");
     private SelenideElement mergeBtn = $("button[name = \"merge\"]");
 
-    @Override
-    public boolean pageIsOpened() {
-        boolean splitButtonExists = splitBtn.waitUntil(Condition.appears, 10000).exists();
-        boolean mergeButtonExists = mergeBtn.waitUntil(Condition.appears, 10000).exists();
-        return splitButtonExists && mergeButtonExists;
+    public SourceDocumentPage() {
+        this.isPageOpened = pageIsOpened(splitBtn, mergeBtn, readyForAutomaticCaseProcessingBtn, enterCaseInformationManuallyBtn);
     }
 
     public void clickTheButton(String buttonName){
@@ -36,4 +32,7 @@ public class SourceDocumentPage extends Page {
        }
     }
 
+    public boolean isOpened() {
+        return isPageOpened;
+    }
 }

@@ -1,20 +1,16 @@
 package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-
-public class OrgPage extends Page {
+public class OrgPage extends Base {
 
     private SelenideElement homeTab = $x("//span[text() = 'Home']");
     private SelenideElement appLauncher = $("nav[class=\"appLauncher slds-context-bar__icon-action\"] > button");
 
-    @Override
-    public boolean pageIsOpened() {
-       return  homeTab.isDisplayed();
+    public OrgPage() {
+        this.isPageOpened = pageIsOpened(appLauncher);
     }
 
     public AppLauncherPage clickAppLauncher(){
@@ -23,6 +19,7 @@ public class OrgPage extends Page {
     }
 
 
-
-
+    public boolean isOpened() {
+        return isPageOpened;
+    }
 }

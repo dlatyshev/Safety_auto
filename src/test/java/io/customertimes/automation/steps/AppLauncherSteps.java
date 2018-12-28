@@ -5,6 +5,7 @@ import io.customertimes.automation.pages.AppLauncherPage;
 import io.customertimes.automation.utilities.TestUtils;
 
 public class AppLauncherSteps extends TestUtils {
+
     private AppLauncherPage appLauncher = new AppLauncherPage();
 
     @When("^user clicks on \"([^\"]*)\"$")
