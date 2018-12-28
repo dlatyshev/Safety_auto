@@ -3,10 +3,8 @@ package io.customertimes.automation.utilities;
 import java.io.*;
 import java.util.Properties;
 
-import static com.codeborne.selenide.Selenide.*;
-
-
 public class TestUtils {
+
     protected void sleep(long millis){
         try {
             Thread.sleep(millis);

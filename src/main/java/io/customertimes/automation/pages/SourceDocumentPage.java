@@ -1,20 +1,18 @@
 package io.customertimes.automation.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class SourceDocumentBase extends Base {
-    private SelenideElement readyForAutomaticCaseProcessingBtn = $x("//button[text() = \"Ready for Automatic Case Processing\"]");
-    private SelenideElement enterCaseInformationManuallyBtn = $x("//button[text() = \"Enter Case Information Manually\"]");
+public class SourceDocumentPage extends Base {
+
+    private SelenideElement readyForAutomaticCaseProcessingBtn = $x("//button[text() = \"Ready for Automatic CasePage Processing\"]");
+    private SelenideElement enterCaseInformationManuallyBtn = $x("//button[text() = \"Enter CasePage Information Manually\"]");
     private SelenideElement splitBtn = $("button[name = \"split\"]");
     private SelenideElement mergeBtn = $("button[name = \"merge\"]");
 
-
-    public SourceDocumentBase() {
-        this.isOpened = pageIsOpened(splitBtn, mergeBtn, readyForAutomaticCaseProcessingBtn, enterCaseInformationManuallyBtn);
+    public SourceDocumentPage() {
+        this.isPageOpened = pageIsOpened(splitBtn, mergeBtn, readyForAutomaticCaseProcessingBtn, enterCaseInformationManuallyBtn);
     }
 
     public void clickTheButton(String buttonName){
@@ -35,6 +33,6 @@ public class SourceDocumentBase extends Base {
     }
 
     public boolean isOpened() {
-        return isOpened;
+        return isPageOpened;
     }
 }
