@@ -11,11 +11,4 @@ public class AppLauncherPage extends Base {
     public void clickOnItemOrApplication(String appNameOrItem){
         $("a[title = \"" + appNameOrItem + "\"] > span > span").click();
     }
-
-
-
-
-
-
-
 }
