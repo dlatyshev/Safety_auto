@@ -18,6 +18,7 @@ public class OrgPage extends Base {
         return new AppLauncherPage();
     }
 
+
     public boolean isOpened() {
         return isPageOpened;
     }

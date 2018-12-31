@@ -25,4 +25,5 @@ public class TestUtils {
 
         return property.getProperty(propertyName);
     }
+
 }
