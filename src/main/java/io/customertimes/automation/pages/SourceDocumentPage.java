@@ -1,6 +1,7 @@
 package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -15,21 +16,21 @@ public class SourceDocumentPage extends Base {
         this.isPageOpened = pageIsOpened(splitBtn, mergeBtn, readyForAutomaticCaseProcessingBtn, enterCaseInformationManuallyBtn);
     }
 
-    public void clickTheButton(String buttonName){
-       switch(buttonName.toLowerCase()){
-           case "ready for automatic case processing":
-               readyForAutomaticCaseProcessingBtn.click();
-               break;
-           case "enter case information manually":
-               enterCaseInformationManuallyBtn.click();
-               break;
-           case "split":
-               splitBtn.click();
-               break;
-           case "merge":
-               mergeBtn.click();
-               break;
-       }
+    public void clickTheButton(String buttonName) {
+        switch (buttonName.toLowerCase()) {
+            case "ready for automatic case processing":
+                readyForAutomaticCaseProcessingBtn.click();
+                break;
+            case "enter case information manually":
+                enterCaseInformationManuallyBtn.click();
+                break;
+            case "split":
+                splitBtn.click();
+                break;
+            case "merge":
+                mergeBtn.click();
+                break;
+        }
     }
 
     public boolean isOpened() {
