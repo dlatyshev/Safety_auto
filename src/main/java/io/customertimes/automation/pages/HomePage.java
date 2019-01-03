@@ -21,4 +21,20 @@ public class HomePage extends Base {
     public boolean isOpened() {
         return isPageOpened;
     }
+
+    public Dashboard selectDashboard () {
+        return new Dashboard();
+    }
+
+    public SourceDocumentPage selectSourceDocument() {
+        return new SourceDocumentPage();
+    }
+
+    public Chater selectChater () {
+        return new Chater();
+    }
+
+    public RecentRecords selectRecentRecords () {
+        return new RecentRecords();
+    }
 }
