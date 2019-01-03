@@ -15,7 +15,7 @@ Feature: Manual SD Processing
   Scenario: Check Home page mockups
     Given user clicks 'App launcher'
     When user clicks on "Home"
-    Then Source Document Status Review is present
+    Then Dashboard is present
     Then Source document list is present
     Then Chatter is present
     Then Recent Records is present
