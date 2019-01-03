@@ -13,23 +13,23 @@ public class HomeSteps {
         homePage.selectSourceDocumentFromTheList(1);
     }
 
-    @Then("^Source Document Status Review is present$")
-    public void source_Document_Status_Review_is_present()  {
-
+    @Then("^Dashboard is present$")
+    public void dashboard_is_present() {
+        homePage.selectDashboard().isOpened();
     }
 
     @Then("^Source document list is present$")
-    public void source_document_list_is_present()  {
-
+    public void source_document_list_is_present() {
+        homePage.selectSourceDocument().isOpened();
     }
 
     @Then("^Chatter is present$")
     public void chatter_is_present() {
-
+        homePage.selectChater().isOpened();
     }
 
     @Then("^Recent Records is present$")
     public void recent_Records_is_present() {
-
+        homePage.selectRecentRecords().isOpened();
     }
 }
