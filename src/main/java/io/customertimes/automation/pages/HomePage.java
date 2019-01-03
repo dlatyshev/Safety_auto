@@ -26,8 +26,8 @@ public class HomePage extends Base {
         return new Dashboard();
     }
 
-    public SourceDocumentPage selectSourceDocument() {
-        return new SourceDocumentPage();
+    public CaseCandidates selectCaseCandidates() {
+        return new CaseCandidates();
     }
 
     public Chater selectChater () {

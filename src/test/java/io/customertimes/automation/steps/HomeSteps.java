@@ -18,11 +18,6 @@ public class HomeSteps {
         homePage.selectDashboard().isOpened();
     }
 
-    @Then("^Source document list is present$")
-    public void source_document_list_is_present() {
-        homePage.selectSourceDocument().isOpened();
-    }
-
     @Then("^Chatter is present$")
     public void chatter_is_present() {
         homePage.selectChater().isOpened();
@@ -31,5 +26,10 @@ public class HomeSteps {
     @Then("^Recent Records is present$")
     public void recent_Records_is_present() {
         homePage.selectRecentRecords().isOpened();
+    }
+
+    @Then("^Case candidate is present$")
+    public void case_candidate_is_present() {
+      homePage.selectCaseCandidates().isOpened();
     }
 }

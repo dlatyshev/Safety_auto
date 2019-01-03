@@ -16,7 +16,14 @@ Feature: Manual SD Processing
     Given user clicks 'App launcher'
     When user clicks on "Home"
     Then Dashboard is present
-    Then Source document list is present
+    Then Case candidate is present
     Then Chatter is present
     Then Recent Records is present
 
+  Scenario: Check Case page mockups
+   # TODO: implement moving to Case page
+
+#    Then Case navigation is present
+#    Then Source document list is present
+#    Then Chatter is present
+#    Then Recent Records is present
