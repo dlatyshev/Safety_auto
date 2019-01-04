@@ -7,8 +7,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class SourceDocumentPage extends Base {
 
-    // TODO: create selector
-    private SelenideElement sourceDocumentTitle = $("");
+    private SelenideElement sourceDocumentTitle = $("span[title='Source Document']");
 
     private SelenideElement readyForAutomaticCaseProcessingBtn = $x("//button[text() = \"Ready for Automatic CasePage Processing\"]");
     private SelenideElement enterCaseInformationManuallyBtn = $x("//button[text() = \"Enter CasePage Information Manually\"]");
@@ -37,7 +36,6 @@ public class SourceDocumentPage extends Base {
     }
 
     public boolean isOpened() {
-        // TODO: uncomment after element appeared
-        return true;
+        return isPageOpened;
     }
 }

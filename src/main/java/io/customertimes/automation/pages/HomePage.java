@@ -22,7 +22,7 @@ public class HomePage extends Base {
         return isPageOpened;
     }
 
-    public Dashboard selectDashboard () {
+    public Dashboard selectDashboard() {
         return new Dashboard();
     }
 
@@ -30,11 +30,11 @@ public class HomePage extends Base {
         return new CaseCandidates();
     }
 
-    public Chater selectChater () {
+    public Chater selectChater() {
         return new Chater();
     }
 
-    public RecentRecords selectRecentRecords () {
+    public RecentRecords selectRecentRecords() {
         return new RecentRecords();
     }
 }
