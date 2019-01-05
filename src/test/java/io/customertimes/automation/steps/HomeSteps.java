@@ -3,6 +3,7 @@ package io.customertimes.automation.steps;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.customertimes.automation.pages.HomePage;
+import org.testng.Assert;
 
 public class HomeSteps {
 
@@ -10,21 +11,21 @@ public class HomeSteps {
 
     @Then("^Dashboard is present$")
     public void dashboard_is_present() {
-        homePage.selectDashboard().isOpened();
+        Assert.assertTrue(homePage.selectDashboard().isOpened());
     }
 
     @Then("^Chatter is present$")
     public void chatter_is_present() {
-        homePage.selectChater().isOpened();
+        Assert.assertTrue(homePage.selectChater().isOpened());
     }
 
     @Then("^Recent Records is present$")
     public void recent_Records_is_present() {
-        homePage.selectRecentRecords().isOpened();
+        Assert.assertTrue(homePage.selectRecentRecords().isOpened());
     }
 
     @Then("^Case candidate is present$")
     public void case_candidate_is_present() {
-      homePage.selectCaseCandidates().isOpened();
+        Assert.assertTrue(homePage.selectCaseCandidates().isOpened());
     }
 }
