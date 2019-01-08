@@ -1,6 +1,7 @@
 package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -13,11 +14,10 @@ public class OrgPage extends Base {
         this.isPageOpened = pageIsOpened(appLauncher);
     }
 
-    public AppLauncherPage clickAppLauncher(){
+    public AppLauncherPage clickAppLauncher() {
         appLauncher.click();
         return new AppLauncherPage();
     }
-
 
     public boolean isOpened() {
         return isPageOpened;
