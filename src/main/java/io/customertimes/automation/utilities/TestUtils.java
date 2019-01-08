@@ -5,25 +5,24 @@ import java.util.Properties;
 
 public class TestUtils {
 
-    protected void sleep(long millis){
+    protected void sleep(long millis) {
         try {
             Thread.sleep(millis);
-        } catch (InterruptedException ex){
+        } catch (InterruptedException ex) {
             System.out.println(ex.getMessage());
         }
     }
 
-    protected String readProperty(String propertyName){
+    protected String readProperty(String propertyName) {
         Properties property = new Properties();
         FileInputStream fs = null;
         try {
             fs = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/config.properties");
             property.load(fs);
-        } catch (IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
 
         return property.getProperty(propertyName);
     }
-
 }
