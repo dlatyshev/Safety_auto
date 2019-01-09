@@ -1,7 +1,6 @@
 package io.customertimes.automation.steps;
 
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import io.customertimes.automation.pages.HomePage;
 import org.testng.Assert;
 

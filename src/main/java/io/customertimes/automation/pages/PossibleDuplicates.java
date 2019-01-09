@@ -7,11 +7,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PossibleDuplicates extends Base {
 
-    // TODO: rewrite selector
-    private SelenideElement milestonesTitle = $(By.xpath("//span[text()=\"Possible Duplicates(0)\"]"));
+    private SelenideElement PossibleDuplicatesHeader = $(By.xpath("//span[contains(text(),'Possible Duplicates')]"));
 
     public PossibleDuplicates() {
-        this.isOpened = (pageIsOpened(milestonesTitle));
+        this.isOpened = (pageIsOpened(PossibleDuplicatesHeader));
     }
 
 }
