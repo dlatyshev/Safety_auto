@@ -1,7 +1,6 @@
 package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import cucumber.api.java.eo.Se;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.$;

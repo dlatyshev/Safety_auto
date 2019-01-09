@@ -16,7 +16,7 @@ Feature: Manual SD Processing
 
   Scenario: Check Home page mockups
     Given user clicks 'App launcher'
-    When user clicks on "Home"
+    When user clicks on "Home" in App Launcher
     Then Dashboard is present
     Then Case candidate is present
     Then Chatter is present
