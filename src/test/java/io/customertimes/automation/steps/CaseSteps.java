@@ -13,32 +13,32 @@ public class CaseSteps extends TestUtils {
     private HomePage homePage = new HomePage();
 
     @When("^user clicks resent opened case$")
-    public void user_clicks_resent_opened_case() {
+    public void userClicksResentOpenedCase() {
         homePage.selectRecentRecords().clickOnCase();
     }
 
     @Then("^Case navigation is present$")
-    public void case_navigation_is_present() {
+    public void caseNavigationIsPresent() {
         Assert.assertTrue(casePage.selectCaseNavigation().isOpened());
     }
 
     @Then("^Milestones is present$")
-    public void milestones_is_present() {
+    public void milestonesIsPresent() {
         Assert.assertTrue(casePage.selectMilestones().isOpened());
     }
 
     @Then("^Possible duplication is present$")
-    public void possible_duplication_is_present() {
+    public void possibleDuplicationIsPresent() {
         Assert.assertTrue(casePage.selectPossibleDuplicates().isOpened());
     }
 
     @Then("^Header bunner is present$")
-    public void header_bunner_is_present() {
+    public void headerBunnerIsPresent() {
         Assert.assertTrue(casePage.selectHeaderBunner().isOpened());
     }
 
     @Then("^Source document is present$")
-    public void source_document_is_present() {
+    public void sourceDocumentIsPresent() {
         Assert.assertTrue(casePage.selectSourceDocumentPage().isOpened());
     }
 }
