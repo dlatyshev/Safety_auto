@@ -8,7 +8,7 @@ public class AppLauncherSteps extends TestUtils {
 
     private AppLauncherPage appLauncher = new AppLauncherPage();
 
-    @When("^user clicks on \"([^\"]*)\"$")
+    @When("^user clicks on \"([^\"]*)\" in App Launcher$")
     public void userClicksOn(String appOrItem) {
         appLauncher.clickOnItemOrApplication(appOrItem);
     }

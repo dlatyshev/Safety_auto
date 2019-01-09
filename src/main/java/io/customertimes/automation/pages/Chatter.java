@@ -6,13 +6,14 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class Chatter extends Base {
 
-    private SelenideElement chaterTitle = $("div.slds-card-wrapper.forceChatterFeedInner");
+    private SelenideElement chatterTitle = $("div.slds-card-wrapper.forceChatterFeedInner");
 
     public Chatter() {
-        this.isPageOpened = (pageIsOpened(chaterTitle));
+        this.isPageOpened = (pageIsOpened(chatterTitle));
     }
 
     public boolean isOpened() {
         return isPageOpened;
     }
 }
+

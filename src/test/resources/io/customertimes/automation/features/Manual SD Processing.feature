@@ -5,7 +5,7 @@ Feature: Manual SD Processing
 
   Scenario: Enter Case information manually
     Given user clicks 'App launcher'
-    When user clicks on "Home"
+    When user clicks on "Home" in App Launcher
     When user clicks resent opened case
     Then Case navigation is present
     Then Milestones is present
