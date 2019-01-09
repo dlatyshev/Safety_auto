@@ -12,4 +12,13 @@ public class DuplicateRulesPage extends Base {
         this.isOpened = pageIsOpened(duplicateRulesListHeader);
     }
 
+    public NewDuplicateRuleRecordPage clickOnTheButtonNew() {
+        $("div[title=\"New\"]").click();
+        return new NewDuplicateRuleRecordPage();
+    }
+
+
+
+
+
 }

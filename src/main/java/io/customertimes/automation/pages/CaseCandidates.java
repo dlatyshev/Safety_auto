@@ -6,10 +6,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CaseCandidates extends Base{
 
-    private SelenideElement caseCandidatsList = $(".slds-card.slds-p-around--medium.cCaseCandidatesList");
+    private SelenideElement caseCandidatesList = $(".slds-card.slds-p-around--medium.cCaseCandidatesList");
 
     public CaseCandidates() {
-        this.isOpened = (pageIsOpened(caseCandidatsList));
+        this.isOpened = (pageIsOpened(caseCandidatesList));
     }
 
 }
+
