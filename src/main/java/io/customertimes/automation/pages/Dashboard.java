@@ -9,10 +9,7 @@ public class Dashboard extends Base {
     private SelenideElement dashboardTitle = $("div.dashboardTopLevelContainer.desktopDashboardsDashboard");
 
     public Dashboard() {
-        this.isPageOpened = (pageIsOpened(dashboardTitle));
+        this.isOpened = (pageIsOpened(dashboardTitle));
     }
 
-    public boolean isOpened() {
-        return isPageOpened;
-    }
 }

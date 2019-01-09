@@ -15,7 +15,7 @@ public class SourceDocumentPage extends Base {
     private SelenideElement mergeBtn = $("button[name = \"merge\"]");
 
     public SourceDocumentPage() {
-        this.isPageOpened = pageIsOpened(sourceDocumentTitle);
+        this.isOpened = pageIsOpened(sourceDocumentTitle);
     }
 
     public void clickTheButton(String buttonName) {
@@ -35,7 +35,4 @@ public class SourceDocumentPage extends Base {
         }
     }
 
-    public boolean isOpened() {
-        return isPageOpened;
-    }
 }

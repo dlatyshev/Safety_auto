@@ -5,7 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 
 public abstract class Base {
 
-    protected boolean isPageOpened;
+    protected boolean isOpened;
 
     protected boolean pageIsOpened(SelenideElement... elements){
         boolean result;
@@ -17,4 +17,9 @@ public abstract class Base {
        }
        return true;
     }
+
+    public boolean isOpened() {
+        return this.isOpened;
+    }
+
 }

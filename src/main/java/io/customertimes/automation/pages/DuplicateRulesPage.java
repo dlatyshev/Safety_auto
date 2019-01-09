@@ -9,6 +9,7 @@ public class DuplicateRulesPage extends Base {
     private SelenideElement duplicateRulesListHeader = $("span[title = \"Duplicate Rule Name\"]");
 
     public DuplicateRulesPage() {
-        this.isPageOpened = pageIsOpened(duplicateRulesListHeader);
+        this.isOpened = pageIsOpened(duplicateRulesListHeader);
     }
+
 }

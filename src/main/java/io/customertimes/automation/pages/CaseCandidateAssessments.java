@@ -9,10 +9,7 @@ public class CaseCandidateAssessments extends Base {
     private SelenideElement caseCandidateAssessmentsList = $("span[title=\"Case Candidate Assessments\"]");
 
     public CaseCandidateAssessments() {
-        this.isPageOpened = (pageIsOpened(caseCandidateAssessmentsList));
+        this.isOpened = (pageIsOpened(caseCandidateAssessmentsList));
     }
 
-    public boolean isOpened() {
-        return isPageOpened;
-    }
 }

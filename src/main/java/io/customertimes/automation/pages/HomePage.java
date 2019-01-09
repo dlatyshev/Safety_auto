@@ -11,15 +11,11 @@ public class HomePage extends Base {
     private ElementsCollection listOfSourceDocuments = $$("th[data-label=\"Account Name\"] a");
 
     public HomePage() {
-        this.isPageOpened = pageIsOpened();
+        this.isOpened = pageIsOpened();
     }
 
     public void selectSourceDocumentFromTheList(int index) {
         listOfSourceDocuments.get(index).click();
-    }
-
-    public boolean isOpened() {
-        return isPageOpened;
     }
 
     public Dashboard selectDashboard() {

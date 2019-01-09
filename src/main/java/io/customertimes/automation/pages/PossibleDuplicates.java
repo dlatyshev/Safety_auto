@@ -11,10 +11,7 @@ public class PossibleDuplicates extends Base {
     private SelenideElement milestonesTitle = $(By.xpath("//span[text()=\"Possible Duplicates(0)\"]"));
 
     public PossibleDuplicates() {
-        this.isPageOpened = (pageIsOpened(milestonesTitle));
+        this.isOpened = (pageIsOpened(milestonesTitle));
     }
 
-    public boolean isOpened() {
-        return isPageOpened;
-    }
 }

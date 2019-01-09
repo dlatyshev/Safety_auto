@@ -9,11 +9,8 @@ public class Chatter extends Base {
     private SelenideElement chatterTitle = $("div.slds-card-wrapper.forceChatterFeedInner");
 
     public Chatter() {
-        this.isPageOpened = (pageIsOpened(chatterTitle));
+        this.isOpened = (pageIsOpened(chatterTitle));
     }
 
-    public boolean isOpened() {
-        return isPageOpened;
-    }
 }
 

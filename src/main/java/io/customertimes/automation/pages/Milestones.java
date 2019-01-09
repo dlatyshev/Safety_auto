@@ -10,10 +10,7 @@ public class Milestones extends Base {
     private SelenideElement milestonesTitle = $(By.xpath("//span[text()=\"Milestones\"]"));
 
     public Milestones() {
-        this.isPageOpened = (pageIsOpened(milestonesTitle));
+        this.isOpened = (pageIsOpened(milestonesTitle));
     }
 
-    public boolean isOpened() {
-        return isPageOpened;
-    }
 }

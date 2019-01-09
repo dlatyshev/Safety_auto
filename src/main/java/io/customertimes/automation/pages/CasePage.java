@@ -9,11 +9,7 @@ public class CasePage extends Base {
     private SelenideElement caseDetails = $("a[title = \"Details\"]");
 
     public CasePage() {
-        this.isPageOpened = (pageIsOpened(caseDetails));
-    }
-
-    public boolean isOpened() {
-        return isPageOpened;
+        this.isOpened = (pageIsOpened(caseDetails));
     }
 
     public CaseNavigation selectCaseNavigation() {

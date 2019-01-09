@@ -1,6 +1,8 @@
 package io.customertimes.automation.steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import io.customertimes.automation.pages.OrgPage;
 import io.customertimes.automation.pages.LoginPage;
 import io.customertimes.automation.utilities.TestUtils;
@@ -18,4 +20,6 @@ public class LogInSteps extends TestUtils {
         loginPage.LogIn(username, password);
         return new OrgPage();
     }
+
+
 }

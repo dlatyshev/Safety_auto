@@ -9,10 +9,7 @@ public class CaseCandidates extends Base{
     private SelenideElement caseCandidatsList = $(".slds-card.slds-p-around--medium.cCaseCandidatesList");
 
     public CaseCandidates() {
-        this.isPageOpened = (pageIsOpened(caseCandidatsList));
+        this.isOpened = (pageIsOpened(caseCandidatsList));
     }
 
-    public boolean isOpened() {
-        return isPageOpened;
-    }
 }
