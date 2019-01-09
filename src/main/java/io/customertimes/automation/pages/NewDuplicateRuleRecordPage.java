@@ -14,7 +14,7 @@ public class NewDuplicateRuleRecordPage extends DuplicateRulesPage {
     private SelenideElement caseReportTypeDropdown = $(xpath("//span[text() = \"Case Report Type\"]/parent::span/following-sibling::div//a"));
     private SelenideElement rowCountField = $(xpath("//span[text() = \"Row Count\"]/parent::label/following-sibling::input"));
     private SelenideElement rowOverflowField = $(xpath("//span[text() = \"Row Overflow\"]/parent::label/following-sibling::input"));
-    private SelenideElement confidenceThreshold = $("//span[text() = \"Confidence Threshhold\"]/parent::label/following-sibling::input");
+    private SelenideElement confidenceThreshold = $("//span[text() = \"Confidence Threshold\"]/parent::label/following-sibling::input");
     private SelenideElement statusDropdown = $(xpath("//span[text() = \"Status\"]/parent::span/following-sibling::div//a"));
     private SelenideElement saveButton = $("button[title = \"Save\"]");
     private SelenideElement cancelButton = $("button[title = \"Cancel\"]");

@@ -5,7 +5,7 @@ Feature: Duplicate Search
 
   Scenario: Create a new duplicate rule
     Given user clicks 'App launcher'
-    When user clicks on "Duplicate rules" in App Launcher
+    When user clicks on "Duplicate Rules" in App Launcher
     Then duplicate rules page is opened
     When user clicks on button 'New'
     Then new duplicate rule page is opened
