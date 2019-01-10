@@ -6,10 +6,13 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CasePage extends Base {
 
+
+    private PossibleDuplicates possibleDuplicates;
     private SelenideElement caseDetails = $("a[title = \"Details\"]");
 
     public CasePage() {
         this.isOpened = (pageIsOpened(caseDetails));
+        this.possibleDuplicates = new PossibleDuplicates();
     }
 
     public CaseNavigation selectCaseNavigation() {
@@ -30,5 +33,9 @@ public class CasePage extends Base {
 
     public SourceDocumentPage selectSourceDocumentPage() {
         return new SourceDocumentPage();
+    }
+
+    public PossibleDuplicates getPossibleDuplicates() {
+        return possibleDuplicates;
     }
 }

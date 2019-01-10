@@ -25,5 +25,10 @@ public class CasesListViewPage extends Base {
                 .waitUntil(Condition.visible, 10000).isDisplayed();
     }
 
+    public CasePage selectCaseByNumber(String number) {
+        $(By.xpath("//th[@scope=\"row\"]//a[text() = \"" + number + "\"]")).click();
+        return new CasePage();
+    }
+
 
 }
