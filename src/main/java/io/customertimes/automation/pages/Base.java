@@ -7,15 +7,15 @@ public abstract class Base {
 
     protected boolean isOpened;
 
-    protected boolean pageIsOpened(SelenideElement... elements){
+    protected boolean pageIsOpened(SelenideElement... elements) {
         boolean result;
-       for(SelenideElement element: elements){
-          result = element.waitUntil(Condition.exist, 10000).isDisplayed();
-          if(!result){
-              return false;
-          }
-       }
-       return true;
+        for (SelenideElement element : elements) {
+            result = element.waitUntil(Condition.exist, 10000).isDisplayed();
+            if (!result) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public boolean isOpened() {
