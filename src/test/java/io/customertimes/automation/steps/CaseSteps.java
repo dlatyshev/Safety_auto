@@ -14,7 +14,7 @@ public class CaseSteps extends TestUtils {
 
     @When("^user clicks resent opened case$")
     public void userClicksResentOpenedCase() {
-        homePage.selectRecentRecords().clickOnCase();
+        homePage.getRecentRecords().clickOnCase();
     }
 
     @Then("^Case navigation is present$")

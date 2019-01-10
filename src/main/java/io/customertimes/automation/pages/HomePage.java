@@ -1,36 +1,34 @@
 package io.customertimes.automation.pages;
 
-import com.codeborne.selenide.ElementsCollection;
-
-import static com.codeborne.selenide.Selenide.$$;
-
 public class HomePage extends Base {
 
     private CaseCandidates caseCandidates;
+    private Dashboard dashboard;
+    private RecentRecords recentRecords;
+    private Chatter chatter;
 
-    private ElementsCollection listOfSourceDocuments = $$("th[data-label=\"Account Name\"] a");
 
     public HomePage() {
         this.isOpened = pageIsOpened();
+        this.caseCandidates = new CaseCandidates();
+        this.dashboard = new Dashboard();
+        this.recentRecords = new RecentRecords();
+        this.chatter = new Chatter();
     }
 
-    public void selectSourceDocumentFromTheList(int index) {
-        listOfSourceDocuments.get(index).click();
+    public CaseCandidates getCaseCandidates() {
+        return caseCandidates;
     }
 
-    public Dashboard selectDashboard() {
-        return new Dashboard();
+    public Dashboard getDashboard() {
+        return dashboard;
     }
 
-    public CaseCandidates selectCaseCandidates() {
-        return new CaseCandidates();
+    public RecentRecords getRecentRecords() {
+        return recentRecords;
     }
 
-    public Chatter selectChater() {
-        return new Chatter();
-    }
-
-    public RecentRecords selectRecentRecords() {
-        return new RecentRecords();
+    public Chatter getChatter() {
+        return chatter;
     }
 }

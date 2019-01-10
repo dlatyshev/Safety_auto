@@ -30,7 +30,7 @@ public class NewDuplicateRuleRecordPage extends DuplicateRulesPage {
         caseReportTypeDropdown.sendKeys(Keys.ARROW_DOWN);
         caseReportTypeDropdown.pressEnter();
         rowCountField.setValue("10");
-        rowOverflowField.setValue("20");
+        rowOverflowField.setValue("10");
         confidenceThreshold.setValue("30");
     }
 

@@ -14,10 +14,4 @@ Feature: Manual SD Processing
     Then Source document is present
     #implement checking Case validation as i understand instead of Case candidate assessments
 
-  Scenario: Check Home page mockups
-    Given user clicks 'App launcher'
-    When user clicks on "Home" in App Launcher
-    Then Dashboard is present
-    Then Case candidate is present
-    Then Chatter is present
-    Then Recent Records is present
+

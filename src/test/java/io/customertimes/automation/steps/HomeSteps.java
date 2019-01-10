@@ -10,21 +10,21 @@ public class HomeSteps {
 
     @Then("^Dashboard is present$")
     public void dashboardIsPresent() {
-        Assert.assertTrue(homePage.selectDashboard().isOpened());
+        Assert.assertTrue(homePage.getCaseCandidates().isOpened());
     }
 
     @Then("^Chatter is present$")
     public void chatterIsPresent() {
-        Assert.assertTrue(homePage.selectChater().isOpened());
+        Assert.assertTrue(homePage.getChatter().isOpened());
     }
 
     @Then("^Recent Records is present$")
     public void recentRecordsIsPresent() {
-        Assert.assertTrue(homePage.selectRecentRecords().isOpened());
+        Assert.assertTrue(homePage.getRecentRecords().isOpened());
     }
 
-    @Then("^Case candidate is present$")
-    public void caseCandidateIsPresent() {
-        Assert.assertTrue(homePage.selectCaseCandidates().isOpened());
+    @Then("^Case candidates list is present$")
+    public void caseCandidatesListIsPresent() {
+        Assert.assertTrue(homePage.getCaseCandidates().isOpened());
     }
 }
