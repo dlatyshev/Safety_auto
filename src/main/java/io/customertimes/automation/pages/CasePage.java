@@ -1,17 +1,12 @@
 package io.customertimes.automation.pages;
 
-import com.codeborne.selenide.SelenideElement;
-
-import static com.codeborne.selenide.Selenide.$;
+import org.openqa.selenium.By;
 
 public class CasePage extends Base {
 
-    private PossibleDuplicates possibleDuplicates;
-    private SelenideElement caseDetails = $("a[title = \"Details\"]");
 
     public CasePage() {
-        this.isOpened = (pageIsOpened(caseDetails));
-        this.possibleDuplicates = new PossibleDuplicates();
+        this.pageTitle = By.cssSelector("a[title = \"Details\"]");
     }
 
     public CaseNavigation selectCaseNavigation() {
