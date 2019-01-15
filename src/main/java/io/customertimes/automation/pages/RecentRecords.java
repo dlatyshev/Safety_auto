@@ -10,11 +10,7 @@ public class RecentRecords extends Base {
     private SelenideElement recentRecordsTitle = $("span[title='Recent Records");
 
     public RecentRecords() {
-        this.isPageOpened = (pageIsOpened(recentRecordsTitle));
-    }
-
-    public boolean isOpened() {
-        return isPageOpened;
+        this.isOpened = (pageIsOpened(recentRecordsTitle));
     }
 
     // temporary solution, change after moving to dev org.

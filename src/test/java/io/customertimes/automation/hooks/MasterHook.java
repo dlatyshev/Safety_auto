@@ -8,15 +8,14 @@ import io.customertimes.automation.utilities.TestUtils;
 public class MasterHook extends TestUtils {
 
     @Before
-    public void setUp(){
-
+    public void setUp() {
         Configuration.screenshots = true;
         Configuration.browser = readProperty("browser");
-        Configuration.timeout = 10000;
+        Configuration.timeout = 20000;
+        Configuration.pageLoadStrategy = "normal";
     }
 
     @After
-    public void tearDown(){
-
+    public void tearDown() {
     }
 }

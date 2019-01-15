@@ -9,10 +9,6 @@ public class CaseNavigation extends Base {
     private SelenideElement caseNavigationTitle = $("h4#treeheading");
 
     public CaseNavigation() {
-        this.isPageOpened = (pageIsOpened(caseNavigationTitle));
-    }
-
-    public boolean isOpened() {
-        return isPageOpened;
+        this.isOpened = (pageIsOpened(caseNavigationTitle));
     }
 }

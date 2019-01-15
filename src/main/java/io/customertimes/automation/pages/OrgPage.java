@@ -11,15 +11,11 @@ public class OrgPage extends Base {
     private SelenideElement appLauncher = $("nav[class=\"appLauncher slds-context-bar__icon-action\"] > button");
 
     public OrgPage() {
-        this.isPageOpened = pageIsOpened(appLauncher);
+        this.isOpened = pageIsOpened(appLauncher);
     }
 
     public AppLauncherPage clickAppLauncher() {
         appLauncher.click();
         return new AppLauncherPage();
-    }
-
-    public boolean isOpened() {
-        return isPageOpened;
     }
 }

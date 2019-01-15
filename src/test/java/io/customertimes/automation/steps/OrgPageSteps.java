@@ -6,10 +6,13 @@ import io.customertimes.automation.utilities.TestUtils;
 
 public class OrgPageSteps extends TestUtils {
 
-    private OrgPage orgPage = new OrgPage();
+    private OrgPage orgPage;
 
     @Given("^user clicks 'App launcher'$")
-    public void userClicksAppLauncher()  {
+    public void userClicksAppLauncher() {
+        if (orgPage == null) {
+            orgPage = new OrgPage();
+        }
         orgPage.clickAppLauncher();
     }
 }

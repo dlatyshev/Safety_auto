@@ -11,7 +11,6 @@ public class LoginPage extends Base {
     private SelenideElement passwordField = $("#password");
 
     public OrgPage LogIn(String email, String password) {
-
         usernameField.val(email);
         passwordField.val(password).pressEnter();
 

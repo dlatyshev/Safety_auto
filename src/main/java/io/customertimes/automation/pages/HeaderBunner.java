@@ -10,10 +10,6 @@ public class HeaderBunner extends Base {
             $("div.slds-page-header.slds-page-header_record-home.forceHighlightsStencilDesktop.forceRecordLayout");
 
     public HeaderBunner() {
-        this.isPageOpened = (pageIsOpened(headerBunnerTitle));
-    }
-
-    public boolean isOpened() {
-        return isPageOpened;
+        this.isOpened = (pageIsOpened(headerBunnerTitle));
     }
 }

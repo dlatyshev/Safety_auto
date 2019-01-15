@@ -1,18 +1,25 @@
 package io.customertimes.automation.pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
+import static org.openqa.selenium.By.xpath;
 
-public class CaseCandidates extends Base{
+public class CaseCandidates extends Base {
 
-    private SelenideElement caseCandidatsList = $(".slds-card.slds-p-around--medium.cCaseCandidatesList");
+    private SelenideElement caseCandidatesSection =  $(".slds-card.slds-p-around--medium.cCaseCandidatesList");
+    private ElementsCollection caseCandidatesList = $$(xpath("//th[@data-label=\"Account Name\"]//a"));
 
     public CaseCandidates() {
-        this.isPageOpened = (pageIsOpened(caseCandidatsList));
+        this.isOpened = (pageIsOpened(caseCandidatesSection));
     }
 
-    public boolean isOpened() {
-        return isPageOpened;
+    public void selectSourceDocumentFromTheListByName(String name) {
+        for(SelenideElement element : caseCandidatesList) {
+            if (element.getText().contains(name)) {
+                executeJavaScript("arguments[0].click()", element);
+            }
+        }
     }
 }
