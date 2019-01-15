@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Selenide.switchTo;
 
 public class SourceDocumentPage extends Base {
 
-    private SelenideElement sourceDocumentTitle = $(By.xpath("//nav[@class = \"entityNameTitle\"]//span[text() = \"Source Document\"]"));
     private SelenideElement documentPreview = $("#mod-file-embed-widget-1");
     private SelenideElement sourceDocumentPreviewFrame = $("iframe[class=\"boxAttachment cBoxAttachmentViewer\"]");
     private SelenideElement readyForAutomaticCaseProcessingBtn = $x("//button[text() = \"Ready for Automatic CasePage Processing\"]");
@@ -19,7 +18,7 @@ public class SourceDocumentPage extends Base {
     private SelenideElement mergeBtn = $("button[name = \"merge\"]");
 
     public SourceDocumentPage() {
-        this.isOpened = pageIsOpened(sourceDocumentTitle);
+        this.pageTitle = By.xpath("//nav[@class = \"entityNameTitle\"]//span[text() = \"Source Document\"]");
     }
 
     public void clickTheButton(String buttonName) {

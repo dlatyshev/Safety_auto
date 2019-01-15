@@ -22,7 +22,7 @@ public class HomeSteps {
         if (homePage == null) {
             homePage = new HomePage();
         }
-        Assert.assertTrue(homePage.getChatter().isOpened());
+        Assert.assertTrue(homePage.selectChatter().isOpened());
     }
 
     @Then("^Recent Records is present$")

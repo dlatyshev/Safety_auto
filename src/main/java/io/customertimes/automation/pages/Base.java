@@ -1,24 +1,16 @@
 package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public abstract class Base {
 
-    protected boolean isOpened;
-
-    protected boolean pageIsOpened(SelenideElement... elements) {
-        boolean result;
-        for (SelenideElement element : elements) {
-            result = element.waitUntil(Condition.exist, 10000).isDisplayed();
-            if (!result) {
-                return false;
-            }
-        }
-        return true;
-    }
+   // protected boolean isOpened;
+    protected By pageTitle;
 
     public boolean isOpened() {
-        return this.isOpened;
+       return  $(pageTitle).waitUntil(Condition.appears, 10000).isDisplayed();
     }
 }

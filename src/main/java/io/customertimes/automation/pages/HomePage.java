@@ -1,10 +1,12 @@
 package io.customertimes.automation.pages;
 
 
+import org.openqa.selenium.By;
+
 public class HomePage extends Base {
 
     public HomePage() {
-        this.isOpened = pageIsOpened();
+        this.pageTitle = By.cssSelector("a[title='Home']");
     }
 
     public CaseCandidates getCaseCandidates() {
@@ -18,10 +20,6 @@ public class HomePage extends Base {
     public RecentRecords getRecentRecords() {
         return new RecentRecords();
 
-    }
-
-    public Chatter getChatter() {
-        return new Chatter();
     }
 
     public Dashboard selectDashboard() {

@@ -8,11 +8,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CasesListViewPage extends Base {
 
-    private SelenideElement casesListViewPageTitle = $("a[title = \"Cases\"]");
     private SelenideElement selectListViewDropdown = $("a[title = \"Select List View\"]");
 
     public CasesListViewPage() {
-        this.isOpened = pageIsOpened(casesListViewPageTitle);
+        this.pageTitle = By.cssSelector("a[title = \"Cases\"]");
     }
 
     public void selectListViewByName(String name) {
