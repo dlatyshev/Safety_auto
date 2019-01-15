@@ -30,6 +30,4 @@ public class PossibleDuplicates extends Base {
     public boolean duplicateSearchResultsAreOpened() {
         return possibleDuplicatesSearchHeader.waitUntil(Condition.visible, 10000).isDisplayed();
     }
-
-
 }

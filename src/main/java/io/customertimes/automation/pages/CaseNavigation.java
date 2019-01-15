@@ -11,5 +11,4 @@ public class CaseNavigation extends Base {
     public CaseNavigation() {
         this.isOpened = (pageIsOpened(caseNavigationTitle));
     }
-
 }

@@ -6,6 +6,7 @@ import io.customertimes.automation.pages.CasePage;
 import io.customertimes.automation.pages.CasesListViewPage;
 import io.customertimes.automation.pages.HomePage;
 import io.customertimes.automation.pages.PossibleDuplicates;
+
 import io.customertimes.automation.utilities.TestUtils;
 import org.testng.Assert;
 

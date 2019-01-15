@@ -10,5 +10,3 @@ Feature: Manual SD Processing
     Then details and file preview are opened
 
     #implement checking Case validation as i understand instead of Case candidate assessments
-
-

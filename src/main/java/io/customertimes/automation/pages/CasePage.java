@@ -38,4 +38,24 @@ public class CasePage extends Base {
     public PossibleDuplicates getPossibleDuplicates() {
         return possibleDuplicates;
     }
+
+    public CaseNavigation selectCaseNavigation() {
+        return new CaseNavigation();
+    }
+
+    public HeaderBunner selectHeaderBunner() {
+        return new HeaderBunner();
+    }
+
+    public Milestones selectMilestones() {
+        return new Milestones();
+    }
+
+    public PossibleDuplicates selectPossibleDuplicates() {
+        return new PossibleDuplicates();
+    }
+
+    public SourceDocumentPage selectSourceDocumentPage() {
+        return new SourceDocumentPage();
+    }
 }

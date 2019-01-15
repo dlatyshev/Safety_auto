@@ -7,6 +7,16 @@ public class HomePage extends Base {
     private RecentRecords recentRecords;
     private Chatter chatter;
 
+import com.codeborne.selenide.ElementsCollection;
+
+import static com.codeborne.selenide.Selenide.$$;
+
+public class HomePage extends Base {
+  
+    private CaseCandidates caseCandidates; 
+    private Dashboard dashboard;
+    private RecentRecords recentRecords;
+    private Chatter chatter;
 
     public HomePage() {
         this.isOpened = pageIsOpened();

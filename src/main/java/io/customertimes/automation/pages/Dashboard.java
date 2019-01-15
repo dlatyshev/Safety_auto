@@ -11,5 +11,4 @@ public class Dashboard extends Base {
     public Dashboard() {
         this.isOpened = (pageIsOpened(dashboardTitle));
     }
-
 }

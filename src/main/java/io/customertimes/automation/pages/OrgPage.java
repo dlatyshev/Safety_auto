@@ -18,5 +18,4 @@ public class OrgPage extends Base {
         appLauncher.click();
         return new AppLauncherPage();
     }
-
 }
