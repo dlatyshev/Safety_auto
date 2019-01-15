@@ -1,5 +1,6 @@
 package io.customertimes.automation.pages;
 
+
 public class HomePage extends Base {
 
     public HomePage() {
@@ -16,9 +17,26 @@ public class HomePage extends Base {
 
     public RecentRecords getRecentRecords() {
         return new RecentRecords();
+
     }
 
     public Chatter getChatter() {
         return new Chatter();
+    }
+
+    public Dashboard selectDashboard() {
+        return new Dashboard();
+    }
+
+    public CaseCandidates selectCaseCandidates() {
+        return new CaseCandidates();
+    }
+
+    public Chater selectChater() {
+        return new Chater();
+    }
+
+    public RecentRecords selectRecentRecords() {
+        return new RecentRecords();
     }
 }
