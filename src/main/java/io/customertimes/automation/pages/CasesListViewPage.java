@@ -9,14 +9,14 @@ import static com.codeborne.selenide.Selenide.$;
 public class CasesListViewPage extends Base {
 
     private SelenideElement casesListViewPageTitle = $("a[title = \"Cases\"]");
-    private SelenideElement selectListViewButton = $("a[title = \"Select List View\"]");
+    private SelenideElement selectListViewDropdown = $("a[title = \"Select List View\"]");
 
     public CasesListViewPage() {
         this.isOpened = pageIsOpened(casesListViewPageTitle);
     }
 
     public void selectListViewByName(String name) {
-        selectListViewButton.click();
+        selectListViewDropdown.click();
         $(By.xpath("//span[contains(text(), '" + name + "')]")).click();
     }
 
@@ -29,6 +29,4 @@ public class CasesListViewPage extends Base {
         $(By.xpath("//th[@scope=\"row\"]//a[text() = \"" + number + "\"]")).click();
         return new CasePage();
     }
-
-
 }

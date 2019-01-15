@@ -11,6 +11,4 @@ public class Chatter extends Base {
     public Chatter() {
         this.isOpened = (pageIsOpened(chatterTitle));
     }
-
 }
-

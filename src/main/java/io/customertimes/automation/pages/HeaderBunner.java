@@ -12,5 +12,4 @@ public class HeaderBunner extends Base {
     public HeaderBunner() {
         this.isOpened = (pageIsOpened(headerBunnerTitle));
     }
-
 }

@@ -94,7 +94,7 @@ public class CaseSteps extends TestUtils {
         if (casePage == null) {
             casePage = new CasePage();
         }
-        possibleDuplicates = casePage.getPossibleDuplicates().clickManualSearchButton();
+        possibleDuplicates = casePage.selectPossibleDuplicates().clickManualSearchButton();
     }
 
     @When("^user clicks the button 'Find Duplicates'$")

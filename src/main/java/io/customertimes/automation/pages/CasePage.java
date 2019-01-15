@@ -34,8 +34,4 @@ public class CasePage extends Base {
     public SourceDocumentPage selectSourceDocumentPage() {
         return new SourceDocumentPage();
     }
-
-    public PossibleDuplicates getPossibleDuplicates() {
-        return possibleDuplicates;
-    }
 }

@@ -21,5 +21,4 @@ public abstract class Base {
     public boolean isOpened() {
         return this.isOpened;
     }
-
 }

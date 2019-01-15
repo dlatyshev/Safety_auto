@@ -11,5 +11,4 @@ public class CaseCandidateAssessments extends Base {
     public CaseCandidateAssessments() {
         this.isOpened = (pageIsOpened(caseCandidateAssessmentsList));
     }
-
 }

@@ -14,7 +14,7 @@ public class HomeSteps {
         if (homePage == null) {
             homePage = new HomePage();
         }
-        Assert.assertTrue(homePage.getCaseCandidates().isOpened());
+        Assert.assertTrue(homePage.getDashboard().isOpened());
     }
 
     @Then("^Chatter is present$")

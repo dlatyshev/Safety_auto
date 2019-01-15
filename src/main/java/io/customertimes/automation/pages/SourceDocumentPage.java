@@ -44,7 +44,4 @@ public class SourceDocumentPage extends Base {
         switchTo().frame(sourceDocumentPreviewFrame);
         return documentPreview.isDisplayed();
     }
-
-
-
 }

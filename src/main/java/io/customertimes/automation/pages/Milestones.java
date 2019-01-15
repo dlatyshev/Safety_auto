@@ -12,5 +12,4 @@ public class Milestones extends Base {
     public Milestones() {
         this.isOpened = (pageIsOpened(milestonesTitle));
     }
-
 }
