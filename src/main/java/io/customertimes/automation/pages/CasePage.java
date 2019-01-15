@@ -4,11 +4,9 @@ import org.openqa.selenium.By;
 
 public class CasePage extends Base {
 
-    private PossibleDuplicates possibleDuplicates;
 
     public CasePage() {
         this.pageTitle = By.cssSelector("a[title = \"Details\"]");
-        this.possibleDuplicates = new PossibleDuplicates();
     }
 
     public CaseNavigation selectCaseNavigation() {
