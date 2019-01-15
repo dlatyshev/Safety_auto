@@ -32,8 +32,8 @@ public class HomePage extends Base {
         return new CaseCandidates();
     }
 
-    public Chater selectChater() {
-        return new Chater();
+    public Chatter selectChatter() {
+        return new Chatter();
     }
 
     public RecentRecords selectRecentRecords() {
