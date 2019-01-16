@@ -10,9 +10,8 @@ public class RecentRecords extends Base {
        this.pageTitle = By.cssSelector("span[title='Recent Records");
     }
 
-    // temporary solution, change after moving to dev org.
-    public CasePage clickOnCase() {
-        $(By.xpath("//a[text()=0001220]")).click();
+    public CasePage clickOnRecentRecord(String record) {
+        $(By.xpath("//li[@class = \"recentsRecordCardRow\"]//a[contains(text()," + record + ")]")).click();
         return new CasePage();
     }
 }

@@ -6,13 +6,11 @@ import io.customertimes.automation.utilities.TestUtils;
 
 public class AppLauncherSteps extends TestUtils {
 
-    private AppLauncherPage appLauncher;
+    private AppLauncherPage appLauncher = new AppLauncherPage();
 
     @When("^user clicks on \"([^\"]*)\" in App Launcher$")
     public void userClicksOn(String appOrItem) {
-        if (appLauncher == null) {
-            appLauncher = new AppLauncherPage();
-        }
+
         appLauncher.clickOnItemOrApplication(appOrItem);
     }
 }

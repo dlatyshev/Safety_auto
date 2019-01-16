@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class OrgPage extends Base {
 
-    private SelenideElement appLauncher = $("nav[class=\"appLauncher slds-context-bar__icon-action\"] > button");
+    private SelenideElement appLauncher = $("nav > button");
 
     public OrgPage() {
         this.pageTitle = By.xpath("//span[text() = 'Home']");
