@@ -13,7 +13,7 @@ public class CaseSteps extends TestUtils {
     private CasePage casePage = new CasePage();
     private HomePage homePage = new HomePage();
     private CasesListViewPage casesListViewPage = new CasesListViewPage();
-    private CasePage.PossibleDuplicates possibleDuplicates = new CasePage.PossibleDuplicates();
+    private CasePage.PossibleDuplicates possibleDuplicates;
 
     @Then("^Case navigation is present$")
     public void caseNavigationIsPresent() {
