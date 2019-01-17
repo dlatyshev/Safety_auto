@@ -1,14 +1,10 @@
 package io.customertimes.automation.utilities;
 
-import com.codeborne.selenide.ElementsCollection;
-import gherkin.lexer.El;
-import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.Keys;
 import java.io.*;
 import java.util.Properties;
 
-import static com.codeborne.selenide.Selenide.$$;
-import static org.openqa.selenium.By.xpath;
+import static com.codeborne.selenide.Selenide.actions;
 
 public class TestUtils {
 
@@ -34,11 +30,13 @@ public class TestUtils {
     }
 
     public static void closeAllTabs() {
-        ElementsCollection tabs = $$(xpath("//button[contains(@title, \"Close\")]"));
-        if(tabs.size() != 0) {
-            for (WebElement tab : tabs) {
-                tab.click();
-            }
-        }
+//        ElementsCollection tabs = $$(xpath("//button[contains(@title, \"Close\")]"));
+//        if(tabs.size() != 0) {
+//            for (WebElement tab : tabs) {
+//                tab.click();
+//            }
+//        }
+        actions().sendKeys(Keys.chord(Keys.LEFT_SHIFT, "W")).build().perform();
+        actions().sendKeys(Keys.ENTER).build().perform();
     }
 }
