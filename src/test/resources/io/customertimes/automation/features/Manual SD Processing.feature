@@ -5,6 +5,7 @@ Feature: Manual SD Processing
 
   Scenario: Enter Case information manually
     Given user clicks 'App launcher'
+    Then 'App launcher' is opened
     When user clicks on "Home" in App Launcher
     When user clicks on recent record with name "00001242"
     Then Case navigation is present
@@ -15,6 +16,7 @@ Feature: Manual SD Processing
 
   Scenario: Opening of the source document
     Given user clicks 'App launcher'
+    Then 'App launcher' is opened
     When user clicks on "Home" in App Launcher
     When user clicks name "Testing" of the source document
     Then details and file preview are opened
