@@ -11,11 +11,12 @@ public class MasterHook extends TestUtils {
     public void setUp() {
         Configuration.screenshots = true;
         Configuration.browser = readProperty("browser");
-        Configuration.timeout = 20000;
+        Configuration.timeout = 10000;
         Configuration.pageLoadStrategy = "normal";
     }
 
     @After
     public void tearDown() {
+        closeAllTabs();
     }
 }

@@ -1,7 +1,14 @@
 package io.customertimes.automation.utilities;
 
+import com.codeborne.selenide.ElementsCollection;
+import gherkin.lexer.El;
+import org.openqa.selenium.WebElement;
+
 import java.io.*;
 import java.util.Properties;
+
+import static com.codeborne.selenide.Selenide.$$;
+import static org.openqa.selenium.By.xpath;
 
 public class TestUtils {
 
@@ -24,5 +31,14 @@ public class TestUtils {
         }
 
         return property.getProperty(propertyName);
+    }
+
+    public static void closeAllTabs() {
+        ElementsCollection tabs = $$(xpath("//button[contains(@title, \"Close\")]"));
+        if(tabs.size() != 0) {
+            for (WebElement tab : tabs) {
+                tab.click();
+            }
+        }
     }
 }
