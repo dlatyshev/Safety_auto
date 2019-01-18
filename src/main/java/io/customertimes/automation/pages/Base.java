@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selenide.$;
 
 public abstract class Base {
 
-   // protected boolean isOpened;
     protected By pageTitle;
 
     public boolean isOpened() {

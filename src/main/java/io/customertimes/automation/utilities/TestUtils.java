@@ -30,12 +30,6 @@ public class TestUtils {
     }
 
     public static void closeAllTabs() {
-//        ElementsCollection tabs = $$(xpath("//button[contains(@title, \"Close\")]"));
-//        if(tabs.size() != 0) {
-//            for (WebElement tab : tabs) {
-//                tab.click();
-//            }
-//        }
         actions().sendKeys(Keys.chord(Keys.LEFT_SHIFT, "W")).build().perform();
         actions().sendKeys(Keys.ENTER).build().perform();
     }
