@@ -5,6 +5,7 @@ Feature: Duplicate search and merge
 
   Scenario: opening of the duplicate search screen
     Given user clicks 'App launcher'
+    Then 'App launcher' is opened
     When user clicks on "Cases" in App Launcher
     When user clicks on case number "00001242"
     When user clicks the button 'Manual Search'

@@ -5,6 +5,7 @@ Feature: Auto SD Review Status
 
   Scenario: Opening of the home page
     Given user clicks 'App launcher'
+    Then 'App launcher' is opened
     When user clicks on "Home" in App Launcher
     Then Dashboard is present
     Then Case candidates list is present

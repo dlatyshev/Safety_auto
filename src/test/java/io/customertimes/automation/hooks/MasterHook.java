@@ -5,6 +5,8 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import io.customertimes.automation.utilities.TestUtils;
 
+import static com.codeborne.selenide.Selenide.*;
+
 public class MasterHook extends TestUtils {
 
     @Before
@@ -17,6 +19,8 @@ public class MasterHook extends TestUtils {
 
     @After
     public void tearDown() {
+        clearBrowserCookies();
+        clearBrowserLocalStorage();
         closeAllTabs();
     }
 }
