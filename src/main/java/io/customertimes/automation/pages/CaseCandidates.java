@@ -2,6 +2,7 @@ package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.customertimes.automation.utilities.TestUtils;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -12,13 +13,22 @@ public class CaseCandidates extends Base {
     private ElementsCollection caseCandidatesList = $$(xpath("//th[@data-label=\"Account Name\"]//a"));
 
     public CaseCandidates() {
-       this.pageTitle = By.cssSelector(".slds-card.slds-p-around--medium.cCaseCandidatesList");
+        this.pageTitle = By.cssSelector(".slds-card.slds-p-around--medium.cCaseCandidatesList");
     }
 
     public void selectSourceDocumentFromTheListByName(String name) {
-        for(SelenideElement element : caseCandidatesList) {
+        for (SelenideElement element : caseCandidatesList) {
             if (element.getText().contains(name)) {
                 executeJavaScript("arguments[0].click()", element);
+            }
+        }
+    }
+
+    public void hoverSourseDocument(String name) {
+        for (SelenideElement element : caseCandidatesList) {
+            if (element.getText().contains(name)) {
+                executeJavaScript("arguments[0].scrollIntoView(true);", element);
+               new TestUtils().sleep(50000);
             }
         }
     }
