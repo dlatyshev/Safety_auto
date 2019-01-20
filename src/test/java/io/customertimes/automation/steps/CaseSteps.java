@@ -2,6 +2,7 @@ package io.customertimes.automation.steps;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.customertimes.automation.pages.CaseMerge;
 import io.customertimes.automation.pages.CasePage;
 import io.customertimes.automation.pages.CasesListViewPage;
 import io.customertimes.automation.pages.HomePage;
@@ -14,6 +15,7 @@ public class CaseSteps extends TestUtils {
     private HomePage homePage = new HomePage();
     private CasesListViewPage casesListViewPage = new CasesListViewPage();
     private CasePage.PossibleDuplicates possibleDuplicates;
+    private CaseMerge caseMerge;
 
     @Then("^Case navigation is present$")
     public void caseNavigationIsPresent() {
@@ -74,5 +76,37 @@ public class CaseSteps extends TestUtils {
     @When("^user clicks on recent record with name \"([^\"]*)\"$")
     public void userClicksOnRecentRecordWithName(String name) {
         homePage.getRecentRecords().clickOnRecentRecord(name);
+    }
+
+    @When("^user clicks on the button 'Select For Merge'$")
+    public void userClicksOnTheButtonSelectForMerge() {
+        casePage.selectPossibleDuplicatesSection().clickSelectForMergeButton();
+    }
+
+    @When("^user clicks on the button 'Merge'$")
+    public void userClicksOnTheButtonMerge() {
+        caseMerge = casePage.selectPossibleDuplicatesSection().clickMergeButton();
+    }
+
+
+    @Then("^case merge page is opened$")
+    public void caseMergePageIsOpened() {
+        Assert.assertTrue(caseMerge.isOpened());
+    }
+
+
+    @Then("^all required buttons are displayed$")
+    public void allRequiredButtonsAreDisplayed() {
+        Assert.assertTrue(caseMerge.allRequiredButtonsAreDisplayed());
+    }
+
+    @Then("^all required fields are displayed$")
+    public void allRequiredFieldsAreDisplayed() {
+        Assert.assertTrue(caseMerge.allRequiredFieldAreDisplayed());
+    }
+
+    @Then("^all required checkboxes are displayed$")
+    public void allRequiredCheckboxesAreDisplayed() {
+        Assert.assertTrue(caseMerge.allRequiredCheckboxesAreDisplayed());
     }
 }

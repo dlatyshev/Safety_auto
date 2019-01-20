@@ -20,13 +20,19 @@ public class AppLauncherSteps extends TestUtils {
 
     @Then("^'App launcher' is opened$")
     public void appLauncherIsOpened() {
-        boolean appLauncherIsOpened;
-        try {
-           appLauncherIsOpened =  appLauncher.isOpened();
-        } catch (ElementNotFound ex) {
-            orgPage.reloadPage();
-            orgPage.clickAppLauncher();
-            appLauncherIsOpened = appLauncher.isOpened();
+        boolean appLauncherIsOpened = false;
+        int attempts = 3;
+        while (!appLauncherIsOpened) {
+            try {
+                appLauncherIsOpened = appLauncher.isOpened();
+            } catch (ElementNotFound ex) {
+                orgPage.reloadPage();
+                orgPage.clickAppLauncher();
+                attempts--;
+
+                if (attempts == 0) break;
+               // appLauncherIsOpened = appLauncher.isOpened();
+            }
         }
         Assert.assertTrue(appLauncherIsOpened);
     }
