@@ -46,6 +46,4 @@ public class CaseCandidates extends Base {
             }
         }
     }
-
-
 }

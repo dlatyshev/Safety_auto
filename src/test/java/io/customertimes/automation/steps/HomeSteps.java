@@ -38,9 +38,4 @@ public class HomeSteps {
     public void user_go_to_name_of_the_source_document_and_wait_for_appearing_hover(String sourceDocumentName) {
         homePage.getCaseCandidates().getSourseDocumentHover(sourceDocumentName);
     }
-
-    @Then("^Source document hover is present$")
-    public void source_document_hover_is_present() {
-
-    }
 }
