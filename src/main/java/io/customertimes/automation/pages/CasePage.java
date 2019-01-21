@@ -66,6 +66,8 @@ public class CasePage extends Base {
         private SelenideElement findDuplicatesButton = $("button[name = \"searchForm\"]");
         private SelenideElement possibleDuplicatesSearchHeader = $(By.xpath("//h1[text() = \"Possible Duplicates\"]"));
         private SelenideElement closePossibleDuplicatesButton = $("button[title=\"Close\"]");
+        private SelenideElement selectForMergeButton = $("button[title=\"Select For Merge\"]");
+        private SelenideElement mergeButton = $(By.xpath("//button[contains(text(), \"Merge\")]"));
 
         public PossibleDuplicates() {
             this.pageTitle = By.xpath("//span[contains(text(),'Possible Duplicates')]");
@@ -79,6 +81,15 @@ public class CasePage extends Base {
         public PossibleDuplicates clickFindDuplicatesButton() {
             findDuplicatesButton.click();
             return this;
+        }
+
+        public void clickSelectForMergeButton() {
+            selectForMergeButton.click();
+        }
+
+        public CaseMerge clickMergeButton() {
+            mergeButton.click();
+            return new CaseMerge();
         }
 
         public boolean duplicateSearchResultsAreOpened() {
