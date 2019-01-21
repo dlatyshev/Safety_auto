@@ -12,13 +12,13 @@ public class CaseCandidates extends Base {
 
     private ElementsCollection caseCandidatesList = $$(xpath("//th[@data-label=\"Account Name\"]//a"));
     private SelenideElement sourceDocumentNameInSourseDocumentHover =
-            $(xpath("//div[@class='slds-col slds-has-flexi-truncate']//span[text()=\"Source Document Name\"]\n"));
+            $(xpath("//div[@class='slds-col slds-has-flexi-truncate']//span[text()=\"Source Document Name\"]"));
     private SelenideElement receiptDateInSourseDocumentHover =
-            $(xpath("//div[@class='slds-col slds-has-flexi-truncate']//span[text()=\"Receipt Date\"]\n"));
+            $(xpath("//div[@class='slds-col slds-has-flexi-truncate']//span[text()=\"Receipt Date\"]"));
     private SelenideElement numberOfPagesInSourseDocumentHover =
-            $(xpath("//div[@class='slds-col slds-has-flexi-truncate']//span[text()=\"Number of Pages\"]\n"));
+            $(xpath("//div[@class='slds-col slds-has-flexi-truncate']//span[text()=\"Number of Pages\"]"));
     private SelenideElement numberOfDocumentsInSourseDocumentHover =
-            $(xpath("//div[@class='slds-col slds-has-flexi-truncate']//span[text()=\"Number of Documents\"]\n"));
+            $(xpath("//div[@class='slds-col slds-has-flexi-truncate']//span[text()=\"Number of Documents\"]"));
 
     public CaseCandidates() {
         this.pageTitle = By.cssSelector(".slds-card.slds-p-around--medium.cCaseCandidatesList");
