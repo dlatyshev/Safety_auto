@@ -20,7 +20,6 @@ public class CaseCandidates extends Base {
     private SelenideElement numberOfDocumentsInSourseDocumentHover =
             $(xpath("//div[@class='slds-col slds-has-flexi-truncate']//span[text()=\"Number of Documents\"]\n"));
 
-
     public CaseCandidates() {
         this.pageTitle = By.cssSelector(".slds-card.slds-p-around--medium.cCaseCandidatesList");
     }
