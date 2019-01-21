@@ -1,42 +1,45 @@
 package io.customertimes.automation.pages;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+import java.util.HashMap;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static org.openqa.selenium.By.xpath;
 
 public class CaseMerge extends Base {
 
-    private SelenideElement acceptAsNewCaseReportButton = $(xpath("//button[contains(text(),'Accept as New Case Report')]"));
-    private SelenideElement acceptAsFollowsCaseReportButton = $(xpath("//button[contains(text(),'Accept as Follow-Up Case')]"));
-    private SelenideElement previewCaseInformationButton = $("button[name='preview']");
-    private SelenideElement subjectField = $(xpath("//form//div[text() = \"Subject\"]"));
-    private SelenideElement caseTypeField = $(xpath("//form//div[text() = \"Case Type\"]"));
-    private SelenideElement countryOfIncidenceField = $(xpath("//form//div[text() = \"Country of Incidence\"]"));
-    private SelenideElement patientDateOfBirthField = $(xpath("//form//div[text() = \"Patient Date of Birth\"]"));
-    private SelenideElement descriptionField = $(xpath("//form//div[text() = \"Description\"]"));
+    private By acceptAsNewCaseReportButton = By.xpath("//button[contains(text(),'Accept as New Case Report')]");
+    private By acceptAsFollowsCaseReportButton = By.xpath("//button[contains(text(),'Accept as Follow-Up Case')]");
+    private By previewCaseInformationButton = By.cssSelector("button[name='preview']");
+    private By subjectField = By.xpath("//form//div[text() = \"Subject\"]");
+    private By caseTypeField = By.xpath("//form//div[text() = \"Case Type\"]");
+    private By countryOfIncidenceField = By.xpath("//form//div[text() = \"Country of Incidence\"]");
+    private By patientDateOfBirthField = By.xpath("//form//div[text() = \"Patient Date of Birth\"]");
+    private By descriptionField = By.xpath("//form//div[text() = \"Description\"]");
     private ElementsCollection checkboxes = $$("form button[role = \"button\"]");
 
     public CaseMerge() {
         this.pageTitle = By.xpath("//h1[text() = \"Case Merge\"]");
     }
 
-    public boolean allRequiredButtonsAreDisplayed() {
+    public HashMap<String, Boolean> allRequiredButtonsAreDisplayed() {
+        HashMap<String, Boolean> buttons = new HashMap<>();
+        buttons.put("acceptAsFollowsCaseReportButton", isElementDisplayed(acceptAsFollowsCaseReportButton));
+        buttons.put("acceptAsNewCaseReportButton", isElementDisplayed(acceptAsNewCaseReportButton));
+        buttons.put("previewCaseInformationButton", isElementDisplayed(previewCaseInformationButton));
 
-        return isElementDisplayed(acceptAsFollowsCaseReportButton)
-                && isElementDisplayed(acceptAsNewCaseReportButton)
-                && isElementDisplayed(previewCaseInformationButton);
+        return buttons;
     }
 
-    public boolean allRequiredFieldAreDisplayed() {
-        return isElementDisplayed(subjectField)
-                && isElementDisplayed(caseTypeField)
-                && isElementDisplayed(countryOfIncidenceField)
-                && isElementDisplayed(patientDateOfBirthField)
-                && isElementDisplayed(descriptionField);
+    public HashMap<String, Boolean> allRequiredFieldsAreDisplayed() {
+        HashMap<String, Boolean> fields = new HashMap<>();
+        fields.put("subjectField", isElementDisplayed(subjectField));
+        fields.put("caseTypeField", isElementDisplayed(caseTypeField));
+        fields.put("countryOfIncidenceField", isElementDisplayed(countryOfIncidenceField));
+        fields.put("patientDateIfBirthField", isElementDisplayed(patientDateOfBirthField));
+        fields.put("descriptionField", isElementDisplayed(descriptionField));
+
+        return fields;
     }
 
     public boolean allRequiredCheckboxesAreDisplayed() {

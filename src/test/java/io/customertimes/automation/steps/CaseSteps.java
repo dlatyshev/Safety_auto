@@ -8,6 +8,9 @@ import io.customertimes.automation.pages.CasesListViewPage;
 import io.customertimes.automation.pages.HomePage;
 import io.customertimes.automation.utilities.TestUtils;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
+import java.util.HashMap;
 
 public class CaseSteps extends TestUtils {
 
@@ -16,6 +19,7 @@ public class CaseSteps extends TestUtils {
     private CasesListViewPage casesListViewPage = new CasesListViewPage();
     private CasePage.PossibleDuplicates possibleDuplicates;
     private CaseMerge caseMerge;
+    private SoftAssert softAssert = new SoftAssert();
 
     @Then("^Case navigation is present$")
     public void caseNavigationIsPresent() {
@@ -94,16 +98,23 @@ public class CaseSteps extends TestUtils {
 
     @Then("^all required buttons are displayed$")
     public void allRequiredButtonsAreDisplayed() {
-        Assert.assertTrue(caseMerge.allRequiredButtonsAreDisplayed());
+        HashMap<String, Boolean> buttons = caseMerge.allRequiredButtonsAreDisplayed();
+        for (HashMap.Entry pair : buttons.entrySet()) {
+            softAssert.assertTrue((boolean)pair.getValue(), pair.getKey() + " is not displayed");
+        }
     }
 
     @Then("^all required fields are displayed$")
     public void allRequiredFieldsAreDisplayed() {
-        Assert.assertTrue(caseMerge.allRequiredFieldAreDisplayed());
+        HashMap<String, Boolean> fields = caseMerge.allRequiredFieldsAreDisplayed();
+        for (HashMap.Entry pair : fields.entrySet()) {
+            softAssert.assertTrue((boolean)pair.getValue(), pair.getKey() + " is not displayed");
+        }
     }
 
     @Then("^all required checkboxes are displayed$")
     public void allRequiredCheckboxesAreDisplayed() {
         Assert.assertTrue(caseMerge.allRequiredCheckboxesAreDisplayed());
+        softAssert.assertAll();
     }
 }
