@@ -31,7 +31,6 @@ public class AppLauncherSteps extends TestUtils {
                 attempts--;
 
                 if (attempts == 0) break;
-               // appLauncherIsOpened = appLauncher.isOpened();
             }
         }
         Assert.assertTrue(appLauncherIsOpened);

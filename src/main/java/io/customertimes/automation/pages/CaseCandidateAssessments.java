@@ -7,5 +7,4 @@ public class CaseCandidateAssessments extends Base {
     public CaseCandidateAssessments() {
        this.pageTitle = By.cssSelector("span[title=\"Case Candidate Assessments\"]");
     }
-
 }

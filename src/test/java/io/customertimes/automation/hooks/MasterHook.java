@@ -14,7 +14,6 @@ public class MasterHook extends TestUtils {
         Configuration.screenshots = true;
         Configuration.browser = readProperty("browser");
         Configuration.timeout = 10000;
-        Configuration.pageLoadStrategy = "normal";
     }
 
     @After

@@ -1,7 +1,5 @@
 package io.customertimes.automation.pages;
 
-
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
@@ -12,8 +10,8 @@ import static org.openqa.selenium.By.xpath;
 
 public class CaseMerge extends Base {
 
-    private SelenideElement acceptAsNewCasereportButton = $(xpath("//button[contains(text(),'Accept as New Case Report')]"));
-    private SelenideElement acceptAsFollowsCaseReport = $(xpath("//button[contains(text(),'Accept as Follow-Up Case')]"));
+    private SelenideElement acceptAsNewCaseReportButton = $(xpath("//button[contains(text(),'Accept as New Case Report')]"));
+    private SelenideElement acceptAsFollowsCaseReportButton = $(xpath("//button[contains(text(),'Accept as Follow-Up Case')]"));
     private SelenideElement previewCaseInformationButton = $("button[name='preview']");
     private SelenideElement subjectField = $(xpath("//form//div[text() = \"Subject\"]"));
     private SelenideElement caseTypeField = $(xpath("//form//div[text() = \"Case Type\"]"));
@@ -22,27 +20,26 @@ public class CaseMerge extends Base {
     private SelenideElement descriptionField = $(xpath("//form//div[text() = \"Description\"]"));
     private ElementsCollection checkboxes = $$("form button[role = \"button\"]");
 
-
     public CaseMerge() {
         this.pageTitle = By.xpath("//h1[text() = \"Case Merge\"]");
     }
 
     public boolean allRequiredButtonsAreDisplayed() {
-        return acceptAsFollowsCaseReport.waitUntil(Condition.appears, 10000).isDisplayed()
-                && acceptAsNewCasereportButton.waitUntil(Condition.appears, 10000).isDisplayed()
-                && previewCaseInformationButton.waitUntil(Condition.appears, 10000).isDisplayed();
+
+        return isElementDisplayed(acceptAsFollowsCaseReportButton)
+                && isElementDisplayed(acceptAsNewCaseReportButton)
+                && isElementDisplayed(previewCaseInformationButton);
     }
 
     public boolean allRequiredFieldAreDisplayed() {
-        return subjectField.waitUntil(Condition.appears, 10000).isDisplayed()
-                && caseTypeField.waitUntil(Condition.appears, 10000).isDisplayed()
-                && countryOfIncidenceField.waitUntil(Condition.appears, 10000).isDisplayed()
-                && patientDateOfBirthField.waitUntil(Condition.appears, 10000).isDisplayed()
-                && descriptionField.waitUntil(Condition.appears, 10000).isDisplayed();
+        return isElementDisplayed(subjectField)
+                && isElementDisplayed(caseTypeField)
+                && isElementDisplayed(countryOfIncidenceField)
+                && isElementDisplayed(patientDateOfBirthField)
+                && isElementDisplayed(descriptionField);
     }
 
     public boolean allRequiredCheckboxesAreDisplayed() {
         return checkboxes.size() > 0;
     }
-
 }

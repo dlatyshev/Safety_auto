@@ -42,7 +42,6 @@ public class CaseSteps extends TestUtils {
         Assert.assertTrue(casePage.selectSourceDocumentSection().isOpened());
     }
 
-
     @When("^user chooses tha appropriate list view \"([^\"]*)\"$")
     public void userChoosesThaAppropriateListView(String listViewName) {
         casesListViewPage.selectListViewByName(listViewName);
@@ -88,12 +87,10 @@ public class CaseSteps extends TestUtils {
         caseMerge = casePage.selectPossibleDuplicatesSection().clickMergeButton();
     }
 
-
     @Then("^case merge page is opened$")
     public void caseMergePageIsOpened() {
         Assert.assertTrue(caseMerge.isOpened());
     }
-
 
     @Then("^all required buttons are displayed$")
     public void allRequiredButtonsAreDisplayed() {
