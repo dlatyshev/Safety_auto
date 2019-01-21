@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.actions;
 
 public class TestUtils {
 
-    protected void sleep(long millis) {
+    static void sleep(long millis) {
         try {
             Thread.sleep(millis);
         } catch (InterruptedException ex) {

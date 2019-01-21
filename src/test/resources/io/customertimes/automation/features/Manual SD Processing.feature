@@ -18,6 +18,7 @@ Feature: Manual SD Processing
     Given user clicks 'App launcher'
     Then 'App launcher' is opened
     When user clicks on "Home" in App Launcher
+    When user go to "Testing" name of the source document and wait for appearing hover
     When user clicks name "Testing" of the source document
     Then details and file preview are opened
 
