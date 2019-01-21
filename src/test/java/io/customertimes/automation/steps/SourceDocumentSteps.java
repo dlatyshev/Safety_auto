@@ -14,6 +14,7 @@ public class SourceDocumentSteps {
     public void detailsAndFilePreviewAreOpened() {
         softAssert.assertTrue(sourceDocument.isOpened());
         softAssert.assertTrue(sourceDocument.filePreviewIsOpened());
+        softAssert.assertAll();
     }
 
     @When("^user clicks on the button \"([^\"]*)\"$")
