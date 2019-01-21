@@ -42,8 +42,10 @@ public class CaseCandidates extends Base {
                         + "evObj.initEvent( 'mouseover', true, true );"
                         + "fireOnThis.dispatchEvent(evObj);";
                 executeJavaScript(code, element);
-                new TestUtils().sleep(500000);
+                new TestUtils().sleep(600);
             }
         }
     }
+
+
 }
