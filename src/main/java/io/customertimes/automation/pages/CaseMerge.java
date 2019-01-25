@@ -4,6 +4,7 @@ import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 import java.util.HashMap;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class CaseMerge extends Base {
@@ -44,5 +45,10 @@ public class CaseMerge extends Base {
 
     public boolean allRequiredCheckboxesAreDisplayed() {
         return checkboxes.size() > 0;
+    }
+
+    public CaseMergePreview clickPreviewCaseInformationButton() {
+        $(previewCaseInformationButton).click();
+        return new CaseMergePreview();
     }
 }

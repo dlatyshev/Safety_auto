@@ -12,7 +12,7 @@ public class CaseMergePreview extends CaseMerge {
     private By subjectField = By.cssSelector("input[name=\"Subject\"]");
     private By caseTypeField = By.cssSelector("input[name=\"Type\"]");
     private By countryOfIncidence = By.cssSelector("input[name=\"Country__c\"]");
-    private By descriptionField = By.cssSelector("input[name=\"Description\"]");
+    private By descriptionField = By.cssSelector("textarea[name=\"Description\"]");
     private By patientDateOfBirth = By.cssSelector("input[name=\"Patient_Date_of_Birth__c\"]");
 
     public CaseMergePreview() {
@@ -44,4 +44,9 @@ public class CaseMergePreview extends CaseMerge {
     public void clickClosePreviewButton() {
         $(closePreviewButton).click();
     }
+
+    public boolean isClosePreviewButtonDisplayed() {
+       return isElementDisplayed(closePreviewButton);
+    }
+
 }

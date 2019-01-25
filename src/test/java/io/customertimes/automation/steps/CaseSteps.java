@@ -1,11 +1,9 @@
 package io.customertimes.automation.steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.customertimes.automation.pages.CaseMerge;
-import io.customertimes.automation.pages.CasePage;
-import io.customertimes.automation.pages.CasesListViewPage;
-import io.customertimes.automation.pages.HomePage;
+import io.customertimes.automation.pages.*;
 import io.customertimes.automation.utilities.TestUtils;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -20,6 +18,7 @@ public class CaseSteps extends TestUtils {
     private CasePage.PossibleDuplicates possibleDuplicates;
     private CaseMerge caseMerge;
     private SoftAssert softAssert = new SoftAssert();
+    private CaseMergePreview caseMergePreview;
 
     @Then("^Case navigation is present$")
     public void caseNavigationIsPresent() {
@@ -116,5 +115,28 @@ public class CaseSteps extends TestUtils {
     public void allRequiredCheckboxesAreDisplayed() {
         Assert.assertTrue(caseMerge.allRequiredCheckboxesAreDisplayed());
         softAssert.assertAll();
+    }
+
+    @When("^user click on 'Preview Case Information\" button$")
+    public void userClickOnPreviewCaseInformationButton() {
+       caseMergePreview =  caseMerge.clickPreviewCaseInformationButton();
+    }
+
+    @Then("^case merge preview page is opened$")
+    public void caseMergePreviewPageIsOpened() {
+        Assert.assertTrue(caseMergePreview.isOpened());
+    }
+
+    @Then("^'Close preview' button is displayed$")
+    public void closePreviewButtonIsDisplayed() {
+       Assert.assertTrue(caseMergePreview.isClosePreviewButtonDisplayed());
+    }
+
+    @Then("^all preview required fields are displayed$")
+    public void allPreviewRequiredFieldsAreDisplayed() {
+        HashMap<String, Boolean> fields = caseMergePreview.allRequiredFieldsAreDisplayed();
+        for (HashMap.Entry pair : fields.entrySet()) {
+            Assert.assertTrue((boolean)pair.getValue(), pair.getKey() + " is not displayed");
+        }
     }
 }
