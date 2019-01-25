@@ -1,13 +1,16 @@
 package io.customertimes.automation.steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.customertimes.automation.pages.CaseCandidates;
 import io.customertimes.automation.pages.HomePage;
 import org.testng.Assert;
 
 public class HomeSteps {
 
     private HomePage homePage = new HomePage();
+    private CaseCandidates caseCandidates;
 
     @Then("^Dashboard is present$")
     public void dashboardIsPresent() {
@@ -34,8 +37,14 @@ public class HomeSteps {
         homePage.getCaseCandidates().selectSourceDocumentFromTheListByName(sourceDocumentName);
     }
 
-    @When("^user go to \"([^\"]*)\" name of the source document and wait for appearing hover$")
-    public void user_go_to_name_of_the_source_document_and_wait_for_appearing_hover(String sourceDocumentName) {
+    @When("^user go to \"([^\"]*)\" name of the source document and hover over it$")
+    public void userGoToTheSourceDocumentAndHoverOverTheName(String sourceDocumentName) {
         homePage.getCaseCandidates().getSourseDocumentHover(sourceDocumentName);
+    }
+
+    @Then("^modal window with source document details is opened$")
+    public void modalWindowWithSourceDocumentDetailsIsOpened() {
+        caseCandidates = new CaseCandidates();
+        Assert.assertTrue(caseCandidates.modalWindowWithDetailsIsOpened());
     }
 }

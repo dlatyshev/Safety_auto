@@ -41,8 +41,15 @@ public class CaseCandidates extends Base {
                         + "evObj.initEvent( 'mouseover', true, true );"
                         + "fireOnThis.dispatchEvent(evObj);";
                 executeJavaScript(code, element);
-                sleep(600);
+                sleep(3000);
             }
         }
+    }
+
+    public boolean modalWindowWithDetailsIsOpened() {
+        return isElementDisplayed(sourceDocumentNameInSourseDocumentHover)
+                && isElementDisplayed(numberOfPagesInSourseDocumentHover)
+                && isElementDisplayed(numberOfDocumentsInSourseDocumentHover)
+                && isElementDisplayed(receiptDateInSourseDocumentHover);
     }
 }
